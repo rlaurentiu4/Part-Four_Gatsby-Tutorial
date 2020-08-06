@@ -3,7 +3,6 @@ module.exports = {
     title: `Pandas Eating Lots`,
   },
   plugins: [
-    // highlight-start
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -11,7 +10,7 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    // highlight-end
+    `gatsby-transformer-remark`, // highlight-line
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
