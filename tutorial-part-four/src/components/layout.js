@@ -1,11 +1,24 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { Link } from "gatsby"
+// highlight-next-line
+import { useStaticQuery, Link, graphql } from "gatsby"
 
 import { rhythm } from "../utils/typography"
-
+// highlight-start
 export default function Layout({ children }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
   return (
+    // highlight-end
     <div
       css={css`
         margin: 0 auto;
@@ -22,7 +35,7 @@ export default function Layout({ children }) {
             font-style: normal;
           `}
         >
-          Pandas Eating Lots
+          {data.site.siteMetadata.title} {/* highlight-line */}
         </h3>
       </Link>
       <Link
@@ -35,5 +48,7 @@ export default function Layout({ children }) {
       </Link>
       {children}
     </div>
+    // highlight-start
   )
 }
+// highlight-end
