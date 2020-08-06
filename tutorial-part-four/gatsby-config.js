@@ -1,10 +1,17 @@
 module.exports = {
-  // highlight-start
   siteMetadata: {
-    title: `Title from siteMetadata`,
+    title: `Pandas Eating Lots`,
   },
-  // highlight-end
   plugins: [
+    // highlight-start
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    // highlight-end
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
