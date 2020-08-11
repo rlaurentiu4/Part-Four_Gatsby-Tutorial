@@ -24,6 +24,8 @@ module.exports = {
         icon: `src/assets/icon.png`, // This path is relative to the root of the site.
       },
     },
+    // highlight-next-line
+    `gatsby-plugin-offline`,
     `gatsby-transformer-remark`, // highlight-line
     `gatsby-plugin-emotion`,
     {
